@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="chat-app">
+        <h1>Welcome to Chat Application</h1>
+
+        <!-- User Registration / Login Form -->
+        <div id="auth-section">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <button id="register-btn">Register</button>
+            <button id="login-btn">Login</button>
+            <div id="auth-error"></div> <!-- For displaying authentication errors -->
+        </div>
+
+        <!-- Chat Room -->
+        <div id="chat-section" style="display: none;">
+            <div id="messages" class="message-list"></div>
+            <input type="text" id="message-input" placeholder="Enter message" data-reply-id="">
+            <button id="send-btn">Send</button>
+            <button id="clear-chat-button">Clear Chat</button>
+            <button id="logout-button">Logout</button>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs via CDN (now as ES Modules) -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js"></script>
+
+    <!-- Your custom JS (also needs to be loaded as a module) -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
